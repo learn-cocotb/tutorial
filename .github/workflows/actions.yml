@@ -1,0 +1,15 @@
+name: learning-cocotb
+run-name: ${{ github.actor }} is learning Cocotb
+on: [push]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: sudo apt install -y --no-install-recommends iverilog
+      - run: pip3 install cocotb
+      - run: make -C tests
+      - uses: actions/upload-artifact@v3
+        with:
+          name: waveform
+          path: tests/waves.vcd
