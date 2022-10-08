@@ -10,7 +10,7 @@ or_gate or_gate(
 );
 
 initial begin
-	$dumpfile("waves.vcd");
+	$dumpfile("or.vcd");
 	$dumpvars;
 end
 endmodule

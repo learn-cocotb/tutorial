@@ -38,7 +38,7 @@ module ifc_test(CLK,
 
 initial begin
 	CLK=0;
-	$dumpfile("waves.vcd");
+	$dumpfile("ifc.vcd");
 	$dumpvars;
 	forever #5 CLK = ~CLK;
 end

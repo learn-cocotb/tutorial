@@ -12,4 +12,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: waveform
-          path: tests/waves.vcd
+          path: tests/or.vcd
+          path: tests/ifc.vcd

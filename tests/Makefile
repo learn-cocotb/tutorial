@@ -6,6 +6,7 @@ VERILOG_SOURCES += $(PWD)/wrappers/ifc_test.v
 VERILOG_SOURCES += $(PWD)/../hdl/ifc_or.v
 VERILOG_SOURCES += $(PWD)/../hdl/FIFO1.v
 VERILOG_SOURCES += $(PWD)/../hdl/FIFO2.v
+all: or ifc
 or:
 	$(MAKE) sim MODULE=or_test TOPLEVEL=or_test
 ifc:
