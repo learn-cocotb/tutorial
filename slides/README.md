@@ -45,16 +45,21 @@ Where a and b are inputs to the gate and y is the output.
 
 * [XOR gate verification](https://classroom.github.com/a/D3N4nEj7)
 
+# Interface
+* Data transfer takes place from Data Producer to Data Consumer.
+* Producers take $t_p$ cycles to produce a unit of data
+* Consumers can accept data every $t_c$ cycles
+* In most cases, Producers need to hold data until consumer can consume it or consumers need to wait for data from Producers.
+* There are various signalling scheme to ensure that data transfer takes place iff producer has data and consumer can accept the data.
+
 # Interfaces: Simple RDY/EN protocol specification.
 
-When data is transferred from one module to another, we need to ensure that
+* Producers assert RDY when they have data to offer and keep it asserted until EN is asserted
+* Consumers assert RDY when they can consume data and keep it asserted until EN is asserted
+* EN is asserted when both Producer.RDY and COnsumer.RDY are asserted.
 
-* Destination module is ready to accept data.
-* Source module is ready to send data.
-
-Data transfer takes place iff source and destination are both ready.
-
-EN is asserted to indicate to the source and destination that the transfer has taken place
+# Delta delay and timing model
+[https://github.com/cocotb/cocotb/wiki/Timing-Model](https://github.com/cocotb/cocotb/wiki/Timing-Model)
 
 # Protocol Verification
 
