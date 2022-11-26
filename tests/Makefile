@@ -13,4 +13,7 @@ or:
 ifc:
 	rm -rf sim_build
 	$(MAKE) sim MODULE=ifc_test TOPLEVEL=ifc_test
+coverage:
+	rm -rf sim_build
+	$(MAKE) sim MODULE=ifc_coverage TOPLEVEL=ifc_test
 include $(shell cocotb-config --makefiles)/Makefile.sim
