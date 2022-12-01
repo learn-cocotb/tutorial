@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: sudo apt-get update
       - run: sudo apt install -y --no-install-recommends iverilog
       - run: pip3 install cocotb cocotb-bus
       - run: make -C tests
