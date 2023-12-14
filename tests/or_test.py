@@ -12,4 +12,4 @@ async def or_test(dut):
         dut.a.value = a[i]
         dut.b.value = b[i]
         await Timer(1, 'ns')
-        assert dut.y.value == y[i], f"Error at iteration {i}"
+        assert dut.y.value == y[i], f"Error at iteration {i} {a[i]} {b[i]} {y[i]}"
